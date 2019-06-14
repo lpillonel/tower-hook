@@ -1,0 +1,36 @@
+{
+    "name": "my_app",
+    "version": "0.0.1",
+    "private": true,
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.{js,json,css,md}": [
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "eslintConfig": {
+      "extends": "react-app",
+      "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "jsx": true,
+          "legacyDecorators": true
+        }
+      },
+      "rules": {
+        "import/no-webpack-loader-syntax": 0
+      }
+    },
+    "devDependencies": {
+      "eslint-plugin-prettier": "^3.0.1",
+      "husky": "^2.4.1",
+      "lint-staged": "^8.1.0"
+    }
+  }
+  
